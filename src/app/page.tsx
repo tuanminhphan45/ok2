@@ -54,7 +54,9 @@ async function saveRSVPClient(
       console.log("RSVP saved successfully! Document ID:", docRef.id);
     } catch (e) {
       console.error("saveRSVPClient failed:", e);
-      console.error("Error details:", e.message, e.code);
+      if (e instanceof Error) {
+        console.error("Error details:", e.message);
+      }
     }
   }
   
@@ -171,10 +173,6 @@ export default function DreamyDateInvite() {
         plan === "evening"
             ? CONFIG.venueEvening.name
             : CONFIG.venueMorning.name;
-    const venueAddress =
-        plan === "evening"
-            ? CONFIG.venueEvening.address
-            : CONFIG.venueMorning.address;
 
     return (
         <div className="relative min-h-screen w-full overflow-hidden bg-brand-blush text-slate-900">
