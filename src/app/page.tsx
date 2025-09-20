@@ -6,12 +6,10 @@ import {
     Calendar,
     MapPin,
     Heart,
-    Send,
     Sparkles,
     Check,
     X,
     PartyPopper,
-    PhoneCall,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -388,41 +386,6 @@ export default function DreamyDateInvite() {
                                 >
                                     <X className="h-5 w-5" /> Hẹn dịp khác
                                 </Button>
-                            </div>
-
-                            <div className="mt-4 grid gap-3">
-                                <a href={`tel:${CONFIG.phoneNumber}`}>
-                                    <Button
-                                        variant="outline"
-                                        className="w-full gap-2 border-brand-navy/20 hover:border-brand-navy/40 hover:bg-brand-blush/50 hover:scale-105 transition-all duration-200"
-                                    >
-                                        <PhoneCall className="h-5 w-5" /> Gọi
-                                        cho {CONFIG.inviterName}
-                                    </Button>
-                                </a>
-                                <a
-                                    href={`https://wa.me/?text=${encodeURIComponent(
-                                        `💌 ${CONFIG.partnerName} ơi, ${
-                                            CONFIG.inviterName
-                                        } mời đi chơi ${selectedDT.toLocaleString(
-                                            "vi-VN"
-                                        )} tại ${venueName}. ${
-                                            CONFIG.subtitle
-                                        } – Đây là link: ${
-                                            window.location.href
-                                        }`
-                                    )}`}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <Button
-                                        variant="outline"
-                                        className="w-full gap-2 border-brand-navy/20 hover:border-brand-navy/40 hover:bg-brand-blush/50 hover:scale-105 transition-all duration-200"
-                                    >
-                                        <Send className="h-5 w-5" /> Gửi lời xác
-                                        nhận qua chat
-                                    </Button>
-                                </a>
                             </div>
                         </motion.div>
                     </motion.div>
